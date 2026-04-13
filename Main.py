@@ -32,7 +32,8 @@ while True:
         case 5:
             lista.delete_first()
         case 6:
-            lista.deleteByValue()
+            data = input("Dato que desea eliminar: ")
+            lista.deleteByValue(data)
         case 7:
             lista.size()
         case 8:
