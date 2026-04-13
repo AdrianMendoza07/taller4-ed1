@@ -18,25 +18,30 @@ while True:
     opcion = input("Elige una opcion: ")
 
     match opcion:
-        case 1:
+        case "1":
             data = input("Ingrese el dato: ")
             lista.insert_at_beginning(data)
-        case 2:
+        case "2":
             data = input("Ingrese el dato: ")
             lista.insert_at_end(data)
-        case 3:
+        case "3":
             lista.display()
-        case 4:
+        case "4":
             data = input("Dato que desea buscar: ")
             print ("Resultado:", lista.search(data))
-        case 5:
+        case "5":
             lista.delete_first()
-        case 6:
+        case "6":
             data = input("Dato que desea eliminar: ")
             lista.deleteByValue(data)
-        case 7:
+        case "7":
             lista.size()
-        case 8:
+        case "8":
             lista.reverseList()
-        case 8:
+        case "9":
             lista.sortList()
+        case "10":
+            print ("Ha salido del programa")
+            break
+        case _:
+            print ("Opcion invalida, Ingrese un numero valido")
