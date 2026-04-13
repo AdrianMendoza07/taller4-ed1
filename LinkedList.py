@@ -48,35 +48,31 @@ class LinkedList:
         if self.head is not None:
             self.head = self.head.next
 
-def reverseList(head):
-    prev = None
-    while head is not None:
-            temp = head.next
-            head.next = prev
-            prev = head
-            head = temp
-    return prev
+    def reverseList(head):
+        prev = None
+        while head is not None:
+                temp = head.next
+                head.next = prev
+                prev = head
+                head = temp
+        return prev
 
-def sortList(head):
-    if head is None:
+    def sortList(head):
+        if head is None:
+            return head
+        changed = True 
+        
+        while changed:
+            changed = False
+            current = head
+            while current.next is not None:
+                if current.value > current.next.value:
+                    temp= current.value
+                    current.valeue = current.next.value
+                    current.next.value = temp
+                    changed = True
+                current = current.next
         return head
-    changed = True 
-    
-    while changed:
-        changed = False
-        current = head
-        while current.next is not None:
-            if current.value > current.next.value:
-                temp= current.value
-                current.valeue = current.next.value
-                current.next.value = temp
-                changed = True
-            current = current.next
-    return head
-
-class LinkedList:
-    def __init__(self):
-        self.head = None  
 
     def deleteByValue(self, value):
         if self.head is None:

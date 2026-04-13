@@ -31,3 +31,12 @@ while True:
             print ("Resultado:", lista.search(data))
         case 5:
             lista.delete_first()
+        case 6:
+            data = input("Dato que desea eliminar: ")
+            lista.deleteByValue(data)
+        case 7:
+            lista.size()
+        case 8:
+            lista.reverseList()
+        case 8:
+            lista.sortList()
