@@ -35,7 +35,7 @@ while True:
             data = input("Dato que desea eliminar: ")
             lista.deleteByValue(data)
         case "7":
-            lista.size()
+            print(lista.size())
         case "8":
             lista.reverseList()
         case "9":
