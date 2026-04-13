@@ -47,32 +47,38 @@ class LinkedList:
     def delete_first(self):
         if self.head is not None:
             self.head = self.head.next
-
+            
+    # Método para reversar la lista
     def reverseList(head):
         prev = None
-        while head is not None:
-                temp = head.next
-                head.next = prev
-                prev = head
-                head = temp
+        current = head
+        while current is not None:
+                temp = current.next
+                current.next = prev
+                prev = current
+                current = temp
         return prev
-
+    
+    # Ordena una lista enlazada simple en orden ascendente reorganizado los punteros y sus nodos
     def sortList(head):
-        if head is None:
+        if head is None or head.next is None:
             return head
-        changed = True 
-        
-        while changed:
-            changed = False
-            current = head
-            while current.next is not None:
-                if current.value > current.next.value:
-                    temp= current.value
-                    current.valeue = current.next.value
-                    current.next.value = temp
-                    changed = True
-                current = current.next
-        return head
+        sorted_Head = None 
+        current = head
+
+        while current is not None:
+            next_node = current.next
+            if sorted_Head is None or current.value < sorted_Head.value:
+                current.next = sorted_Head
+                sorted_Head = current 
+            else:
+                temp = sorted_Head
+                while temp.next is not None and temp.next.value < current.value:
+                    temp= temp.next
+                current.next = temp.next
+                temp.next= current
+            current = next_node
+        return sorted_Head
 
     def deleteByValue(self, value):
         if self.head is None:
