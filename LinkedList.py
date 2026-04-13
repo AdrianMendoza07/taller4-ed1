@@ -74,6 +74,7 @@ class LinkedList:
                 current = current.next
         return head
 
+    #Metodo para eliminar por valor
     def deleteByValue(self, value):
         if self.head is None:
             print("Lista vacia")
@@ -93,6 +94,7 @@ class LinkedList:
             current = current.next
         print("Valor no esta en la lista")
             
+    #Metodo para determinar el tamaño de la lista enlazada        
     def size(self):
         current = self.head
         listSize = 0
